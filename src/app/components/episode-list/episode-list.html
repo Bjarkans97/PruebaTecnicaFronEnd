@@ -1,0 +1,68 @@
+<div class="container">
+    <h2>Lista de Episodios</h2>
+
+    <app-error-display 
+        [errorMessage]="errorMessage()" 
+        (retry)="limpiar()">
+    </app-error-display>
+
+    @if (loading()) {
+        <div class="spinner">Cargando datos...</div>
+    }
+
+    @if (errorMessage() === null && !loading()) {
+        <div class="controls-bar">
+            <input type="text" 
+                   placeholder="Filtrar por nombre..." 
+                   (input)="updateFilter($any($event.target).value)">
+
+            <select (change)="updateSort($any($event.target).value)">
+                <option value="name">Ordenar por Nombre</option>
+                <option value="date">Ordenar por Fecha</option>
+            </select>
+            
+            <button class="btn-clear" (click)="limpiar()">Limpiar</button>
+        </div>
+
+        @if (filteredEpisodes().length > 0) {
+            <table>
+                <thead>
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Código</th>
+                        <th>Fecha de Emisión</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @for (ep of filteredEpisodes(); track ep.id) {
+                    <tr>
+                        <td>{{ ep.name }}</td>
+                        <td>{{ ep.episodeCode }}</td>
+                        <td>{{ ep.airDate }}</td>
+                        <td>
+                            <button class="btn-action" (click)="verDetalle(ep.charactersLinq)">
+                                Ver Personajes
+                            </button>
+                        </td>
+                    </tr>
+                    }
+                </tbody>
+            </table>
+
+            <div class="pagination-controls">
+                <button class="btn-nav" (click)="changePage(currentPage() - 1)" [disabled]="currentPage() === 1">
+                    Anterior
+                </button>
+
+                <span class="page-indicator">Página {{ currentPage() }}</span>
+
+                <button class="btn-nav" (click)="changePage(currentPage() + 1)">
+                    Siguiente
+                </button>
+            </div>
+        } @else {
+            <p>No se encontraron episodios con esos filtros.</p>
+        }
+    }
+</div>

@@ -1,0 +1,28 @@
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+.custom-navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: #2d3748;
+  color: white;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.nav-brand { font-weight: bold; font-size: 1.25rem; }
+
+.menu-toggler { display: none; background: none; border: none; color: white; font-size: 1.5rem; cursor: pointer; }
+
+.nav-list { display: flex; list-style: none; }
+
+.main-content { padding: 2rem; max-width: 1200px; margin: 0 auto; }
+
+@media (max-width: 768px) {
+  .menu-toggler { display: block; }
+  .nav-menu { 
+    display: none; width: 100%; text-align: center; 
+    flex-direction: column; padding-top: 1rem;
+  }
+  .nav-menu.active { display: flex; }
+}

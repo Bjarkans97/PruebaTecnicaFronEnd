@@ -1,0 +1,109 @@
+.container {
+  font-family: 'Inter', sans-serif;
+  padding: 40px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+h2 {
+  color: #1e293b;
+  margin-bottom: 24px;
+  font-weight: 700;
+}
+
+.controls-bar {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 25px;
+  align-items: center;
+}
+
+.controls-bar input, .controls-bar select {
+  padding: 10px 14px;
+  border: 2px solid #e2e8f0;
+  border-radius: 8px;
+  font-size: 14px;
+}
+
+.spinner {
+  text-align: center;
+  padding: 40px;
+  font-weight: 600;
+  color: #3b82f6;
+  font-size: 1.1rem;
+}
+
+input {
+  padding: 12px 16px;
+  border: 2px solid #e2e8f0;
+  border-radius: 8px;
+  width: 280px;
+  transition: border-color 0.2s;
+}
+
+input:focus {
+  outline: none;
+  border-color: #3b82f6;
+}
+
+button {
+  padding: 10px 20px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  transition: transform 0.1s, background 0.2s;
+}
+
+button:active { transform: scale(0.98); }
+
+.btn-search { background-color: #97ce4c; color: #3c3e44; }
+.btn-search:hover { background-color: #7ab33d; }
+
+.btn-clear { background-color: #3c3e44; color: white; }
+.btn-clear:hover { background-color: #27282e; }
+
+.btn-action {
+  background-color: #3b82f6;
+  color: white;
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-weight: 500;
+}
+.btn-action:hover { background-color: #2563eb; }
+
+table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+th { background: #f8fafc; padding: 16px; text-align: left; color: #475569; font-size: 0.875rem; text-transform: uppercase; }
+td { padding: 16px; border-top: 1px solid #f1f5f9; }
+
+.pagination-controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  margin-top: 30px;
+  padding: 20px;
+}
+
+.page-indicator { font-weight: 700; color: #3c3e44; font-size: 1rem; }
+
+.btn-nav {
+  background-color: #3c3e44;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: background 0.2s, opacity 0.2s;
+}
+
+.btn-nav:hover:not(:disabled) { background-color: #27282e; }
+.btn-nav:disabled { background-color: #cbd5e1; cursor: not-allowed; opacity: 0.7; }

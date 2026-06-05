@@ -1,0 +1,29 @@
+<div class="container">
+  
+  <div class="header-container">
+    <h2>Detalle de Personajes</h2>
+    <button class="btn-back" (click)="volver()">
+      <span>←</span> Volver a Episodios
+    </button>
+  </div>
+
+  <app-error-display [errorMessage]="errorMessage()"></app-error-display>
+
+  @if (errorMessage() === null) {
+    <div class="cards-grid">
+      @for (p of personajes(); track p.id) {
+        <div class="card">
+          <img [src]="p.image" [alt]="p.name">
+          <div class="card-content">
+            <h3>{{ p.name }}</h3>
+            <p><strong>Estado:</strong> {{ p.status }}</p>
+            <p><strong>Especie:</strong> {{ p.species }}</p>
+            <p><strong>Género:</strong> {{ p.gender }}</p>
+          </div>
+        </div>
+      } @empty {
+        <p>No se encontraron personajes para este episodio.</p>
+      }
+    </div>
+  }
+</div>

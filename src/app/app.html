@@ -1,0 +1,15 @@
+<nav class="custom-navbar">
+  <div class="nav-brand">Rick & Morty App</div>
+  
+  <button class="menu-toggler" (click)="toggleMenu()">☰</button>
+
+  <div [class.active]="isMenuOpen()" class="nav-menu">
+    <ul class="nav-list">
+      <li class="nav-item">Benjamin Ramirez S.</li>
+    </ul>
+  </div>
+</nav>
+
+<main class="main-content">
+  <router-outlet></router-outlet>
+</main>
