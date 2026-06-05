@@ -1,6 +1,6 @@
-================================================================
-FRONTEND: PRUEBATECNICAFRONEND
-================================================================
+
+FRONTEND: PRUEBA TECNICA FRONTEND
+
 
 Esta aplicación es una SPA (Single Page Application) desarrollada 
 en Angular 20.3, diseñada para interactuar con un BFF 
